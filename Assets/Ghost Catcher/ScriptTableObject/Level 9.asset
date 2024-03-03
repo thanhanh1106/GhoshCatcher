@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870ce270cc89ce7439cee60b0be967dd, type: 3}
+  m_Name: Level 9
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: GhostsMatrix
+      Entry: 7
+      Data: 0|System.Boolean[,], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: ranks
+      Entry: 1
+      Data: 4|4
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  BackGroundTable: {fileID: 21300000, guid: 6fb10273e8c396d4c8f907cafcfc6331, type: 3}
+  ShapesSprite:
+  - {fileID: 21300000, guid: 7a8662579f395ac41a5961337f2cb055, type: 3}
+  - {fileID: 21300000, guid: 7267aa9f0bed3d840bd272323c06a6fa, type: 3}
+  - {fileID: 21300000, guid: 59521471e58388149b12c5125eb5108b, type: 3}
+  - {fileID: 21300000, guid: 9416188170101fc489027687869c6dfc, type: 3}
+  - {fileID: 21300000, guid: a003f20e372c0dc4cbaae090584ff21a, type: 3}
+  - {fileID: 21300000, guid: 3aa33a3b193d3294998e8b425875c8df, type: 3}
+  Step:
+    MaxStep: 45
+    Milestone3Star: 30
+    Milestone2Star: 20
+    Milestone1Star: 10
+  ShapeIds: 010000000200000003000000040000000500000006000000

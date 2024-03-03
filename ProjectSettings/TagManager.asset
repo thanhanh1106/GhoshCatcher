@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pushable
+  - FxTemporaire
+  - WallOver
+  - CandyPiece
+  - PaperBlue
+  - Bullet
+  - Shield
+  - Pet
+  - Gold
+  - Node
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ragdoll
+  - Water
+  - UI
+  - Puddle
+  - Player
+  - Bullet
+  - Obstacle
+  - Objects
+  - CandyPiece
+  - Paper
+  - Floor
+  - Shield
+  - Pet
+  - Node
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
