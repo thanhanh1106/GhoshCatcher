@@ -1,7 +1,6 @@
 ﻿using Common.FSM;
 using System.Collections;
 using System.Collections.Generic;
-using Firebase.Crashlytics;
 using Unicorn;
 using Unicorn.FSM;
 using UnityEngine;

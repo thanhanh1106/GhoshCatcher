@@ -1,7 +1,5 @@
 ﻿
 using AppsFlyerSDK;
-using Firebase.Analytics;
-using Firebase.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +16,7 @@ public class AnalyticsRevenueAds
     public static async void Init()
     {
         AppsflyerID = AppsFlyer.getAppsFlyerId();
-        FirebaseID = await GetAnalyticsInstanceId();
+        //FirebaseID = await GetAnalyticsInstanceId();
 
     }
 
@@ -34,18 +32,18 @@ public class AnalyticsRevenueAds
     {
         //string revenue = data.revenue.Value.ToString("N12").TrimEnd('0');
 
-        Firebase.Analytics.Parameter[] AdParameters = {
-             new Firebase.Analytics.Parameter("ad_platform", "iron_source"),
-             new Firebase.Analytics.Parameter("ad_source", data.adNetwork),
-             new Firebase.Analytics.Parameter("ad_unit_name",data.adUnit),
-             new Firebase.Analytics.Parameter("currency","USD"),
-             new Firebase.Analytics.Parameter("value",data.revenue.Value),
-             new Firebase.Analytics.Parameter("placement",data.placement),
-             new Firebase.Analytics.Parameter("country_code",data.country),
-             new Firebase.Analytics.Parameter("ad_format",data.instanceName),
-        };
+        //Firebase.Analytics.Parameter[] AdParameters = {
+        //     new Firebase.Analytics.Parameter("ad_platform", "iron_source"),
+        //     new Firebase.Analytics.Parameter("ad_source", data.adNetwork),
+        //     new Firebase.Analytics.Parameter("ad_unit_name",data.adUnit),
+        //     new Firebase.Analytics.Parameter("currency","USD"),
+        //     new Firebase.Analytics.Parameter("value",data.revenue.Value),
+        //     new Firebase.Analytics.Parameter("placement",data.placement),
+        //     new Firebase.Analytics.Parameter("country_code",data.country),
+        //     new Firebase.Analytics.Parameter("ad_format",data.instanceName),
+        //};
 
-        Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression_ironsource", AdParameters);
+        //Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression_ironsource", AdParameters);
 
 
     }
@@ -66,34 +64,34 @@ public class AnalyticsRevenueAds
     private static void SendEventThreshold(ImpressionData data, AdFormat type)
     {
 
-        var rev = GetRevenueCache(type);
-        rev += data.Revenue;
-        var time = GetTimeLogin(type);
-        bool isMaxDay = CheckConditionDay(time, RocketRemoteConfig.GetIntConfig("config_max_day_send_revenue", 1));
+        //var rev = GetRevenueCache(type);
+        //rev += data.Revenue;
+        //var time = GetTimeLogin(type);
+        //bool isMaxDay = CheckConditionDay(time, RocketRemoteConfig.GetIntConfig("config_max_day_send_revenue", 1));
 
-        if (rev >= RocketRemoteConfig.GetFloatConfig("min_value_revenue", 1) || isMaxDay)
-        {
-            // send event
-            Firebase.Analytics.Parameter[] AdParameters = {
-                    new Firebase.Analytics.Parameter("ad_platform", "applovin"),
-                    new Firebase.Analytics.Parameter("ad_source", data.NetworkName),
-                    new Firebase.Analytics.Parameter("ad_unit_name", data.AdUnitIdentifier),
-                    new Firebase.Analytics.Parameter("currency","USD"),
-                    new Firebase.Analytics.Parameter("value",rev),
-                    new Firebase.Analytics.Parameter("placement",data.Placement),
-                    new Firebase.Analytics.Parameter("country_code",data.CountryCode),
-                    new Firebase.Analytics.Parameter("ad_format",data.AdFormat),
-                      };
+        //if (rev >= RocketRemoteConfig.GetFloatConfig("min_value_revenue", 1) || isMaxDay)
+        //{
+        //    //// send event
+        //    //Firebase.Analytics.Parameter[] AdParameters = {
+        //    //        new Firebase.Analytics.Parameter("ad_platform", "applovin"),
+        //    //        new Firebase.Analytics.Parameter("ad_source", data.NetworkName),
+        //    //        new Firebase.Analytics.Parameter("ad_unit_name", data.AdUnitIdentifier),
+        //    //        new Firebase.Analytics.Parameter("currency","USD"),
+        //    //        new Firebase.Analytics.Parameter("value",rev),
+        //    //        new Firebase.Analytics.Parameter("placement",data.Placement),
+        //    //        new Firebase.Analytics.Parameter("country_code",data.CountryCode),
+        //    //        new Firebase.Analytics.Parameter("ad_format",data.AdFormat),
+        //    //          };
 
-            Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression_threshold", AdParameters);
+        //    //Firebase.Analytics.FirebaseAnalytics.LogEvent("ad_impression_threshold", AdParameters);
 
-            SetRevenueCache(type, 0);
-            SetTimeLogin(type, DateTime.Now.ToString());
-        }
-        else
-        {
-            SetRevenueCache(type, rev);
-        }
+        //    //SetRevenueCache(type, 0);
+        //    //SetTimeLogin(type, DateTime.Now.ToString());
+        //}
+        //else
+        //{
+        //    SetRevenueCache(type, rev);
+        //}
 
     }
 
@@ -187,26 +185,26 @@ public class AnalyticsRevenueAds
         PlayerPrefs.SetString("time_login_check_rev" + type, time);
     }
 
-    public static Task<string> GetAnalyticsInstanceId()
-    {
-        return FirebaseAnalytics.GetAnalyticsInstanceIdAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCanceled)
-            {
-                //DebugLog("App instance ID fetch was canceled.");
-            }
-            else if (task.IsFaulted)
-            {
-                //DebugLog(String.Format("Encounted an error fetching app instance ID {0}",
-                //task.Exception.ToString()));
-            }
-            else if (task.IsCompleted)
-            {
-                //DebugLog(String.Format("App instance ID: {0}", task.Result));
-            }
-            return task;
-        }).Unwrap();
-    }
+    //public static Task<string> GetAnalyticsInstanceId()
+    //{
+    //    //return FirebaseAnalytics.GetAnalyticsInstanceIdAsync().ContinueWithOnMainThread(task =>
+    //    //{
+    //    //    if (task.IsCanceled)
+    //    //    {
+    //    //        //DebugLog("App instance ID fetch was canceled.");
+    //    //    }
+    //    //    else if (task.IsFaulted)
+    //    //    {
+    //    //        //DebugLog(String.Format("Encounted an error fetching app instance ID {0}",
+    //    //        //task.Exception.ToString()));
+    //    //    }
+    //    //    else if (task.IsCompleted)
+    //    //    {
+    //    //        //DebugLog(String.Format("App instance ID: {0}", task.Result));
+    //    //    }
+    //    //    return task;
+    //    //}).Unwrap();
+    //}
 
 
 }

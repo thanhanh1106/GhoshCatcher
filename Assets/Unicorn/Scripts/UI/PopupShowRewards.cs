@@ -69,13 +69,13 @@ namespace Unicorn.UI
             else
             {
                 // check show rate game
-                int lvlShowRate = RocketRemoteConfig.GetIntConfig("config_show_rate_game", 1000);
-                if (PlayerPrefs.GetInt("showRate", 0) == 0 &&
-                    GameManager.Instance.DataLevel.DisplayLevel >= lvlShowRate)
-                {
-                    //StartCoroutine(IEShowRateGame());
-                    PlayerPrefs.SetInt("showRate", 1);
-                }
+                //int lvlShowRate = RocketRemoteConfig.GetIntConfig("config_show_rate_game", 1000);
+                //if (PlayerPrefs.GetInt("showRate", 0) == 0 &&
+                //    GameManager.Instance.DataLevel.DisplayLevel >= lvlShowRate)
+                //{
+                //    //StartCoroutine(IEShowRateGame());
+                //    PlayerPrefs.SetInt("showRate", 1);
+                //}
             }
 
             float ratio = (float) process / (float) reward.NumberWin;

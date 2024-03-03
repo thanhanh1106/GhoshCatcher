@@ -29,8 +29,8 @@ namespace Unicorn.UI
             {
                 timeCheckInternet = 0;
 
-                if (!RocketRemoteConfig.GetBoolConfig("config_check_internet", true))
-                    return;
+                //if (!RocketRemoteConfig.GetBoolConfig("config_check_internet", true))
+                //    return;
 
                 if (Application.internetReachability != NetworkReachability.NotReachable)
                 {

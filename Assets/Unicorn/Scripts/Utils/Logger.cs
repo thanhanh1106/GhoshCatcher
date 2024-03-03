@@ -1,5 +1,4 @@
 ﻿using System;
-using Firebase.Crashlytics;
 using UnityEngine;
 
 namespace Unicorn.Utilities

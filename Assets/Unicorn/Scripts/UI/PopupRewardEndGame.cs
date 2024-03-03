@@ -75,11 +75,11 @@ namespace Unicorn.UI
 
         private void OnClickBtnClose()
         {
-            bool isNextReward = RocketRemoteConfig.GetBoolConfig("next_reward_end_game_user_lose_it", true);
-            if (isNextReward)
-            {
-                SetupNextReward();
-            }
+            //bool isNextReward = RocketRemoteConfig.GetBoolConfig("next_reward_end_game_user_lose_it", true);
+            //if (isNextReward)
+            //{
+            //    SetupNextReward();
+            //}
 
             OnBackPressed();
 

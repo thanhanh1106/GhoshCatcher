@@ -49,12 +49,12 @@ namespace Unicorn.UI
             btnX3Coin.gameObject.SetActive(true);
             btnCollectGold.interactable = false;
             // SetupRewardEndGame();
-            int lvlShowRate = RocketRemoteConfig.GetIntConfig("config_show_rate_game", 4);
-            if (PlayerPrefs.GetInt("showRate", 0) == 0 && GameManager.Instance.DataLevel.DisplayLevel >= lvlShowRate)
-            {
-                StartCoroutine(IEShowRateGame());
-                PlayerPrefs.SetInt("showRate", 1);
-            }
+            //int lvlShowRate = RocketRemoteConfig.GetIntConfig("config_show_rate_game", 4);
+            //if (PlayerPrefs.GetInt("showRate", 0))
+            //{
+            //    StartCoroutine(IEShowRateGame());
+            //    PlayerPrefs.SetInt("showRate", 1);
+            //}
 
             StartCoroutine(IEWaitShowFx());
 
